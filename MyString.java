@@ -9,7 +9,7 @@ public class MyString {
         System.out.println(countChar(hello, 'z'));
         System.out.println(spacedString(hello));
         System.out.println(randomStringOfLetters(3));
-        //// Put your other tests here.
+        //// Put your other tests here.       
         // System.out.println(remove("abcdef", "abcdefghijk")); 
         // System.out.println(insertRandomly('c', hello));
         /// 
@@ -65,28 +65,15 @@ public class MyString {
          if (str2.length()<str1.length()) {
             return false;
          }
-         int counter = 0;
-         for(int i=0;i<str2.length();i++) {
-            char current = str2.charAt(i);
-            if (current==str1.charAt(0)) {
-                for(int j=0;j<str1.length();j++) {
-                    if (j+i>=str2.length()) {
-                        counter = 0;
-                        break;
-                    }
-                    if (str1.charAt(j) == str2.charAt(j+i)) {
-                        counter++;
-                    } else {
-                        counter = 0;
-                        break;
-                    }
-                }
-            }
-            if (counter == str1.length()) {
-                return true;
-            }
+         if (str1.length()==0 && str2.length()!=0)   return true;
+         if (str2.length()==0 && str1.length()!=0)   return false;
+         if (str2.length()==str1.length() && str2.length()==0) return true;
+            for (int j = 0; j < str1.length(); j++) {
+                if (countChar(str2, str1.charAt(j)) < countChar(str1, str1.charAt(j))) {
+                return false;
+                }   
          }
-        return false;
+        return true;
     }
 
     /** Returns a string which is the same as the given string, with a space
@@ -143,15 +130,15 @@ public class MyString {
        //// Replace the following statement with your code
        String temp = "";
        Boolean check = true;
-       for(int i=0;i<str2.length();i++) {
-        for(int j=0;j<str1.length();j++) {
-            if (str2.charAt(i) == str1.charAt(j)) {
+       for(int i=0;i<str1.length();i++) {
+        for(int j=0;j<str2.length();j++) {
+            if (str1.charAt(i) == str2.charAt(j)) {
                 check = false;
                 break;
             }
         }
         if (check) {
-            temp+=str2.charAt(i);
+            temp+=str1.charAt(i);
         }
         check = true;
        }
