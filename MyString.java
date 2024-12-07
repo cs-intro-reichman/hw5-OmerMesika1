@@ -10,6 +10,7 @@ public class MyString {
         System.out.println(spacedString(hello));
         System.out.println(randomStringOfLetters(3));
         //// Put your other tests here.       
+        System.out.println("committee - meet -> " + MyString.remove("committee", "meet") + " (expected: comit)");
         // System.out.println(remove("abcdef", "abcdefghijk")); 
         // System.out.println(insertRandomly('c', hello));
         /// 
@@ -130,10 +131,15 @@ public class MyString {
        //// Replace the following statement with your code
        String temp = "";
        Boolean check = true;
+       char[] ch2 = new char[str2.length()];
+       for(int i=0;i<ch2.length;i++) {
+        ch2[i] = str2.charAt(i);
+       }
        for(int i=0;i<str1.length();i++) {
-        for(int j=0;j<str2.length();j++) {
-            if (str1.charAt(i) == str2.charAt(j)) {
+        for(int j=0;j<ch2.length;j++) {
+            if (str1.charAt(i) == ch2[j]) {
                 check = false;
+                ch2[j] = '\0';
                 break;
             }
         }
