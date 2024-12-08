@@ -1,6 +1,12 @@
 /*
  * RUNI version of the Scrabble game.
  */
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
 public class Scrabble {
 
 	// Note 1: "Class variables", like the five class-level variables declared below,
