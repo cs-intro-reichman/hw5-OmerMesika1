@@ -11,7 +11,7 @@ public class Demo {
 	// which is initialized once and cannot be changed later.
 
 	// Dictionary file for this Scrabble game
-	static final String WORDS_FILE = "tinyDictionary.txt";
+	static final String WORDS_FILE = "dictionary.txt";
 
 	// Maximum number of possible words in this Scrabble game
 	static int MAX_NUMBER_OF_WORDS = 100000;
