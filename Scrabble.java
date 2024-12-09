@@ -126,6 +126,7 @@ public class Scrabble {
 						int addition= wordScore(input) ;
 						score += addition;
 						System.out.println(input + " earned " + addition + " points. Score: " + score + " points");
+						System.out.println();
 						hand = MyString.remove(hand, input);
 					} else {
 						System.out.println("No such word in the dictioQnary. Try again.");
